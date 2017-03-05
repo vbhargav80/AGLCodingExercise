@@ -1,0 +1,19 @@
+﻿@model AGL.CodingExercise.Domain.GroupedByGenderResponse
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach (var grouping in Model.Groupings)
+        {
+            <h4>@grouping.GenderOfOwner</h4>
+            <ul>
+                @foreach (var pet in grouping.Pets)
+                {
+                    <li>@pet.Name</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
